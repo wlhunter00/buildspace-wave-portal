@@ -14,8 +14,12 @@ const main = async () => {
     waveCount = await waveContract.getTotalWaves();
     console.log(waveCount.toNumber());
 
-    let waveTxn = await waveContract.wave('A message!');
+    let waveTxn = await waveContract.wave('Wave 1!');
     await waveTxn.wait();
+
+    let waveTxn2 = await waveContract.wave('Wave 1!');
+    await waveTxn2.wait();
+
 
     // const [_, randomPerson] = await hre.ethers.getSigners();
     // waveTxn = await waveContract.connect(randomPerson).wave('Another message!');
